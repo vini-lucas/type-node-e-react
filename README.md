@@ -27,9 +27,9 @@ Compilar os arquivos TypeScript:
 npx tsc
 ```
 
-Fazer com que o compila:
+Fazer com que o compilador fique monitorando os arquivos TypeScript e compile-os automaticamente a partir de qualquer alteraçaõ feita:
 ```
-npx tsc
+npx tsc -watch
 ```
 
 Executar o arquivo JavaScript compilado:
