@@ -37,6 +37,27 @@ Executar o arquivo JavaScript compilado:
 node CAMINHO_DO_ARQUIVO
 ```
 
+Diferença de var, const e let:
+```
+var exemplo = 'exemplo'; // Pode ter o valor alterado e pode ser usada em qualquer local.
+const exemplo = 'exemplo'; // Não pode ter o valor alterado e funciona em qualquer local.
+let exemplo = 'exemplo'; // Pode ter o valor alterado mas funciona somente dentro da função que tiver.
+```
+
+Criar objeto:
+```
+// Criar variável do tipo objeto
+interface Client {
+    name: string;
+    amount: number;
+}
+
+let client: Client {
+    name: 'Lucas',
+    amount: 20
+};
+```
+
 <hr>
 
 ### PASSOS PARA RODAR O PROJETO (depois de tê-lo clonado)
