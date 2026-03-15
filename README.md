@@ -1,11 +1,11 @@
-### REQUISITOS
+### TYPESCRIPT REQUISITOS
 
  - Node JS 22 ou superior; 
  - MySql última versão.
 
 <hr>
 
-### ANOTAÇÕES
+### TYPESCRIPT ANOTAÇÕES
 
 Criar o package.json:
 ```
@@ -60,9 +60,52 @@ let client: Client {
 
 <hr>
 
-### PASSOS PARA RODAR O PROJETO (depois de tê-lo clonado)
+### PASSOS PARA RODAR O PROJETO TYPESCRIPT (depois de tê-lo clonado)
 
 Instalar o restante das dependencias necessárias:
 ```
 npm install
+```
+
+<hr>
+<hr>
+<hr>
+
+### REACT REQUISITOS
+
+ - Node JS 22 ou superior;
+ - NPX última versão.
+
+<hr>
+
+### PASSOS PARA RODAR O PROJETO REACT (depois de tê-lo clonado)
+
+Instalar o restante das dependencias necessárias:
+```
+npm install
+```
+
+<hr>
+
+### REACT ANOTAÇÕES
+
+Criar o projeto com React e Next JS:
+```
+npx create-next-app@latest .
+```
+
+Rodar o projeto (acessá-lo em: http://localhost:3000/):
+```
+npm run dev
+```
+
+Síntaxe básica para criar uma arrow function:
+```
+const Home = () => {
+  return(
+    <main>
+      <h2>Bem-vindo!</h2>
+    </main>
+  )
+}
 ```
