@@ -152,3 +152,25 @@ const Home = () => {
 
 export default Home;
 ```
+
+Utilizando o useState,
+Precisa informar o 'use client' para importá-lo:
+```
+'use client'
+import { useState } from "react";
+
+const Home = () => {
+
+  const [nameUser, setNameUser] = useState("Lucas"); // o valor padrão começa com "Lucas".
+
+  return (
+    <main>
+      <p>Nome: {nameUser}</p>
+      <button onClick={() => setNameUser("Messi")}>Alterar</button> // sempre que for alterá-lo usa-se o setNameUser passando no parâmetro o novo valor que irá receber.
+      <h2>Bem-vindo!</h2>
+    </main>
+  )
+}
+
+export default Home;
+```
