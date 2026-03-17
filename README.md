@@ -174,3 +174,50 @@ const Home = () => {
 
 export default Home;
 ```
+
+Utilizando o useEffect,
+Ele realiza os comportamentos passados para ele caso o seu segundo parâmetro sofra quaisquer alterações:
+```
+'use client';
+
+import { useEffect, useState } from "react";
+
+const Home = () => {
+
+  const [productId, setProductId] = useState(1);
+  const [nameId, setNameId] = useState("Notebook");
+  const [priceId, setPriceId] = useState(1000);
+  const [userId, setUser] = useState({
+    id: 0,
+    name: "Indefinido"
+  });
+
+  function searchProduct(){
+    setNameId("Notebook atualizado");
+    setPriceId(5000);
+    setProductId(10);
+    setUser({
+      id: 10,
+      name: "Lucas"
+    });
+  }
+
+  useEffect(() => {
+    searchProduct();
+  },[productId]) // Quando a página recarregar o useEffect será executado, após isto ele será chamado somente se productId sofrer alteração. Caso queira que ele rode somente quando a página carregar usa-se [].
+
+  return (
+    <main>
+      <p>ID do produto: {productId}</p>
+      <p>Nome do produto: {nameId}</p>
+      <p>Preço do produto: {priceId}</p>
+      <hr />
+
+      <p>ID do usuário: {userId.id}</p>
+      <p>Nome do produto: {userId.name}</p>
+    </main>
+  )
+}
+
+export default Home;
+```
