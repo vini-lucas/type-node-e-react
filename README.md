@@ -234,3 +234,15 @@ URL amigável (somente anotação, funcionalidade do Next JS, não do React):
  
 Resumo: o nome do diretório define a URL, contanto que o nome do arquivo seja um dos 4 citados acima, lembrando que eles precisam estar dentro do diretório src/app.
 ```
+
+Formulário em React (para validá-lo):
+```
+Para receber o evento:
+
+const Exemplo = (e) => {
+    e.preventDefault();
+}
+
+// Utilizar e: any => vulnerável, isto desliga o ts e ele não valida a tipagem deixando o método menos seguro.
+// Utilizando e: React.FormEvent<HTMLFormEvent> => seguro, usa o ts e valida a tipagem, deixando o método seguro.
+```
