@@ -223,6 +223,7 @@ export default Home;
 ```
 
 URL amigável (somente anotação, funcionalidade do Next JS, não do React):
+```
  - O nome da pasta define a url (ex.: Dashboard/page.tsx => URL: /dashboard);
  - O nome do arquivo precisa ser um destes para funcionar:
  | - page.tsx => página;
@@ -231,3 +232,4 @@ URL amigável (somente anotação, funcionalidade do Next JS, não do React):
  | - error.tsx => error.
  - O nome da constante do arquivo NÃO define a URL.   
 Resumo: o nome do diretório define a URL, contanto que o nome do arquivo seja um dos 4 citados acima, lembrando que eles precisam estar dentro do diretório src/app.
+```
