@@ -246,3 +246,60 @@ const Exemplo = (e) => {
 // Utilizar e: any => vulnerável, isto desliga o ts e ele não valida a tipagem deixando o método menos seguro.
 // Utilizando e: React.FormEvent<HTMLFormEvent> => seguro, usa o ts e valida a tipagem, deixando o método seguro.
 ```
+
+Mais anotações formulário em React e TypeScript:
+```
+const Home = () => {
+
+  interface formData {
+    nameUser: string,
+    emailUser: string
+  };
+
+  const [data, setData] = useState<formData>({
+    nameUser: '',
+    emailUser: ''
+  });
+
+  /* Recebe os dados dos campos do formulário: */
+  /* Obs: "React.ChangeEvent<HTMLInputElement>" espera alguma alteração no evento (React.ChangeEvent) e essa alteração vem de um input de um formulário (<HTMLInputElement>). */
+  const valueInput = (e: React.ChangeEvent<HTMLInputElement>) => setData({
+    ...data, // isso copia tudo o que há em data, ou seja, é como se valueInput agora possuísse:
+    // nameUser: '',
+    // emailUser: '',
+    // demais campos...
+
+    // E aqui, e.target.name recebe o nome do campo do formulário, se o nome bater com o nome do objeto (de setData) ele o substitui, se não apenas adiciona mais um campo no objeto.
+    [e.target.name]: e.target.value
+  });
+ 
+
+  /* "React.SubmitEvent<HTMLFormElement>" é uma tipagem ts que refere à um evento de um formulário (por estar usando TypeScript não é recomendado usar any.).*/
+  const addUser = (e: React.SubmitEvent<HTMLFormElement>) => {
+
+    e.preventDefault();
+    
+    // Manipular os dados recebidos:
+    console.log("Nome" + data.nameUser);
+    console.log("E-mail" + data.emailUser);
+  }
+
+  return(
+    <main>
+        <form onSubmit={addUser}>
+
+          <label htmlFor="name">Nome:</label>
+          <input type="text" name="nameUser" placeholder="Ex.: Lucas Vinicius" onChange={valueInput} /><br /><br />
+
+          <label htmlFor="email">E-mail:</label>
+          <input type="email" name="emailUser" placeholder="Ex.: exemplo@dominio.com" onChange={valueInput} /><br /><br />
+
+          <input type="submit" value="Cadastrar" />
+
+        </form>
+    </main>
+  )
+}
+
+export default Home;
+```
