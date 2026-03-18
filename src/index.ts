@@ -1,1 +1,0 @@
-const message:string = "Olá, Lucas!";
